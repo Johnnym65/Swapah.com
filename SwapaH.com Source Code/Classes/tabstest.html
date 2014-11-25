@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>Best Html Tab Panel using CSS and Javascript</title>
+  <link rel="stylesheet" href="/common.css" type="text/css" />
+  <link rel="stylesheet" href="tab-panel.css" type="text/css" />
+  <script language="JavaScript" type="text/javascript" src="tab-panel.js">
+  </script>
+
+</head>
+
+<body onload="bodyOnLoad()" onResize="raisePanel(currentMenuIndex)">
+
+
+
+<h1>Putting all of this together, an example</h1>
+<p>Below there is an example of the panel, look at the source code of the page !</p>
+
+<!-- ========================= BEGIN of tabbed-frame div ======================== -->
+
+<div id="tabFrame">
+
+<div id="tabMenuDiv">
+<span class="tabMenu" id="tabMenu0" onClick="return raisePanel(0)" onMouseOver="mouseOver(0)" onMouseOut="mouseOut(0)" >
+   First Tab Menu</span>
+<span class="tabMenu" id="tabMenu1" onClick="return raisePanel(1)" onMouseOver="mouseOver(1)" onMouseOut="mouseOut(1)">
+   Second Tab Menu</span>
+<span class="tabMenu" id="tabMenu2" onClick="return raisePanel(2)" onMouseOver="mouseOver(2)" onMouseOut="mouseOut(2)">
+   Third Tab Menu</span>
+</div>
+
+<div class="tabPane" id="tabPane0">
+<p>Veni Karthaginem, et circumstrepebat me undique sartago flagitiosorum amorum. nondum amabam, et amare
+amabam, et secretiore indigentia oderam me minus indigentem. quaerebam quid amarem, amans amare, et
+oderam securitatem et viam sine muscipulis, quoniam fames mihi erat intus ab interiore cibo,
+te ipso, deus meus, et ea fame non esuriebam, sed eram sine desiderio alimentorum incorruptibilium,
+non quia planus eis eram, sed quo insanior, fastidiosior. et ideo non bene valebat anima mea,
+et ulcerosa proiciebat se foras, miserabiliter scalpi avida contactu sensibilium.</p>
+
+<p>sed si non haberent animam, non utique amarentur. amare et amari dulce mihi erat, magis si et
+amantis corpore fruerer. Venam igitur amicitiae coinquinabam sordibus concupiscentiae,
+candoremque eius obnubilabam de tartaro libidinis, et tamen foedus atque inhonestus, elegans
+et urbanus esse gestiebam abundanti vanitate. rui etiam in amorem, quo cupiebam capi.
+deus meus, misericordia mea, quanto felle mihi suavitatem illam et quam bonus aspersisti, quia
+et amatus sum, et perveni ad vinculum fruendi et conligabar laetus aerumnosis nexibus, ut caederer
+virgis ferreis ardentibus zeli et suspicionum et timorum et irarum atque rixarum.</p>
+</div>
+
+<div class="tabPane" id="tabPane1">
+programming is not easy, why do you believe it is ?
+</div>
+
+<div class="tabPane" id="tabPane2">
+This is the third pane
+</div>
+
+<div id="tabFiller" ></div>
+
+</div>
+<!-- ========================= end of tabbed-frame div ======================== -->
+
+
+</body>
+
+</html>

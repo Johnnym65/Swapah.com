@@ -1,0 +1,48 @@
+<script type="text/javascript">
+//var sec = 10;   // set the seconds
+//var min = 01;   // set the minutes
+
+function countDown(hrs,min,sec,gid) { 
+  sec--;
+  if (sec == -01) {
+    sec = 59;
+    min = min - 1;
+  }
+ else {   min = min;  }
+ if (min == -01) {
+	min = 59;
+	hrs = hrs - 1;
+  }
+  
+ else { hrs = hrs; }
+if (sec<=9) { sec = "0" + sec; }
+if (hrs<=9) { hrs = "0" + hrs; }
+  time = hrs + ":" + (min<=9 ? "0" + min : min) + ":" + sec + "";
+if (document.getElementById) { document.getElementById(gid).innerHTML = time; }
+  SD=window.setTimeout("countDown("+hrs+","+min+","+sec+",'"+gid+"');", 1000);
+if (hrs == '00' && min == '00' && sec == '00') { sec = "00"; window.clearTimeout(SD); }
+}
+
+function addLoadEvent(func) {
+  var oldonload = window.onload;
+  if (typeof window.onload != 'function') {
+    window.onload = func;
+  } else {
+    window.onload = function() {
+      if (oldonload) {
+        oldonload();
+      }
+      func();
+    }
+  }
+}
+
+addLoadEvent(function() {
+  countDown(0,0,10000,'oneT');
+  countDown(0,0,5,'twoT');
+  countDown(36,2,15,'threeT');
+});
+</script>     
+<div id="oneT" class="timeClass"></div>
+<div id="twoT" class="timeClass"></div>
+<div id="threeT" class="timeClass"></div>

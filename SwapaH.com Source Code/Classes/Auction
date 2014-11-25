@@ -1,0 +1,27 @@
+<?php
+$con = mysql_connect("localhost","root","root");
+if (!$con)
+  {
+  die('Could not connect: ' . mysql_error());
+  }
+
+mysql_select_db("Users", $con);
+
+$result = mysql_query("SELECT * FROM Auction WHERE AuctionID = 1");
+
+echo "<table border='1'>
+<tr>
+<th>itemID</th>
+<th>AuctionID</th>
+</tr>";
+
+while($row = mysql_fetch_array($result))
+  {
+  echo "<tr>";
+  echo "<td>" . $row['Item_id'] . "</td>";
+  echo "<td>" . $row['AuctionID'] . "</td>";
+  echo "</tr>";
+  }
+echo "</table>";
+
+mysql

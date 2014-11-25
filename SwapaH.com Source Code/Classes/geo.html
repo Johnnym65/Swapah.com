@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>HTML5 geolocation example</title>
+
+<style type="text/css">
+#sphone {
+       margin-left:auto;
+       margin-right:auto;
+       margin-top:25px;  
+       height: 426px;
+       width: 219px;
+       padding-top:102px;
+       padding-left:16px;   
+       background-repeat: no-repeat;
+}  
+</style>
+
+<script>
+function googleMapIt(p)
+{ 
+
+  var detail ='<p><strong>Latitude: </strong> ' + p.coords.latitude + ' <strong> Longitude: </strong> ' + p.coords.longitude; + '</p>';
+  document.getElementById("addAfterLoad").innerHTML = detail;
+  
+ 
+  
+  
+  var lat1 = p.coords.latitude;
+  	var lat2 = 53.294772;
+  	var lon1 = p.coords.longitude;
+  	var lon2 = -6.263924;
+  
+ 	var R = 6371; // Radius of the earth in km
+	var dLat = (lat2-lat1).toRad();  // Javascript functions in radians
+	var dLon = (lon2-lon1).toRad(); 
+	var a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) * Math.sin(dLon/2) * Math.sin(dLon/2); 
+	var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+	
+	
+	var d = R * c; // Distance in km
+	d = d.toFixed(1);
+	d = d+"KM away";
+	document.getElementById("distance").innerHTML = d;
+
+}
+if (typeof(Number.prototype.toRad) === "undefined") {
+  Number.prototype.toRad = function() {
+    return this * Math.PI / 180;
+  }
+}
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(googleMapIt);
+}
+else {
+  var detail ='<p><strong>Your browser does not support geolocation!</strong></p>';
+  document.getElementById("addAfterLoad").innerHTML = detail;
+  
+  	
+  
+  
+}
+</script>
+</head>
+
+<body>
+<div id="addAfterLoad"></div>
+<div id="distance"></div>
+</body>
+</html> 
